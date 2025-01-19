@@ -8,11 +8,9 @@ import { Jobcard } from './job_card';
 import PostJob from './post';
 import { getJobs } from './api';
 
-
-
 interface job_mold {
   id: number;
-  title: string;
+  name: string; 
   category: string;
   income: number;
 }
@@ -20,14 +18,14 @@ interface job_mold {
 function App() {
   const category_list = [
     { id: 1, name: '事務' },
-    { id: 2, name: 'エンジニア' }, 
-    { id: 3, name: '営業' }, 
-    { id: 4, name: 'マーケティング' }, 
-    { id: 5, name: '財務・経理' }, 
-    { id: 6, name: '人事' }, 
-    { id: 7, name: 'カスタマーサービス' }, 
-    { id: 8, name: '製造' }, 
-    { id: 9, name: '医療・介護' }, 
+    { id: 2, name: 'エンジニア' },
+    { id: 3, name: '営業' },
+    { id: 4, name: 'マーケティング' },
+    { id: 5, name: '財務・経理' },
+    { id: 6, name: '人事' },
+    { id: 7, name: 'カスタマーサービス' },
+    { id: 8, name: '製造' },
+    { id: 9, name: '医療・介護' },
   ];
 
   useEffect(() => {
@@ -46,7 +44,7 @@ function App() {
   const [job, setjob] = useState<job_mold[]>([]);
 
   const add_job = (job_status: job_mold) => {
-    setjob((prevJobs) => [...prevJobs, job_status]); 
+    setjob((prevJobs) => [...prevJobs, job_status]);
   };
 
   const [boxstate, boxChecker] = React.useState(
@@ -63,7 +61,7 @@ function App() {
     }));
   };
 
-  const [selectedIncome, setSelectedIncome] = React.useState<string>("0");
+  const [selectedIncome, setSelectedIncome] = React.useState<string>('0');
 
   const setIncome_func = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedIncome(e.target.value);

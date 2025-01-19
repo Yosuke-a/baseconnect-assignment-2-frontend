@@ -12,7 +12,7 @@ export const getJobs = async () => {
   }
 };
 
-export const createJobs = async (jobData: { title: string; category: string; income: number }) => {
+export const createJobs = async (jobData: { name: string; category: string; income: number }) => {
   try {
     console.log('Requesting POST to:', `${API_BASE_URL}/jobs`);
     const response = await axios.post(`${API_BASE_URL}/jobs`, jobData);

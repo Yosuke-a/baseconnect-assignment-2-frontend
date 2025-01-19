@@ -4,7 +4,7 @@ import { createJobs } from './api';
 
 interface job_mold {
   id: number;
-  title: string;
+  name: string;
   category: string;
   income: number;
 }
@@ -25,7 +25,7 @@ const PostJob: React.FC<PostJobProps> = ({ setjob }) => {
 
     try {
       const newJob: Omit<job_mold, 'id'> = {
-        title: name,
+        name: name,
         category,
         income: Number(income),
       };
