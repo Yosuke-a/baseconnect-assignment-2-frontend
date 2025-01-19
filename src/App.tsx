@@ -32,6 +32,7 @@ function App() {
     const fetchJobs = async () => {
       try {
         const jobData = await getJobs();
+        console.log(jobData);
         setjob(jobData);
       } catch (error) {
         console.error('Error while fetching jobs:', error);
