@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = "http://127.0.0.1:3000";
+const API_BASE_URL = "https://baseconnect-backend-cba4a58a8c62.herokuapp.com/";
 
 export const getJobs = async () => {
   try {
